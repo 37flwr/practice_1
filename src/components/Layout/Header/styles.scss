@@ -1,0 +1,42 @@
+.header {
+  height: 60px;
+  width: 100vw;
+  background-color: var(--background-secondary);
+  display: flex;
+  justify-content: center;
+
+  .header-container {
+    max-width: 1290px;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-logo {
+      height: 26px;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    .header-container {
+      padding: 0 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header {
+    .header-container {
+      padding: 0 16px;
+    }
+  }
+}

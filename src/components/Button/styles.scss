@@ -1,0 +1,22 @@
+.standard-width {
+  width: 100px;
+}
+
+.big-width {
+  width: 120px;
+}
+
+.button {
+  height: 34px;
+  border-radius: 80px;
+  background-color: var(--color-yellow-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-yellow-additional);
+  }
+}
