@@ -1,9 +1,9 @@
-import React from 'react';
+import Hero from './components/Hero';
 import './styles.scss';
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <Hero />
   )
 }
 
