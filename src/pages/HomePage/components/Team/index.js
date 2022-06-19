@@ -22,15 +22,42 @@ const Team = () => {
         {loading ? 
             <div>Loading...</div>
         :
-        memoizedUsers.data.users.length > 0 ?
-            memoizedUsers.data.users.map(() => (
-                <div className="user-box">
-                    1
-                </div>
-            ))
+        memoizedUsers.users.length > 0 ?
+            <>
+                {memoizedUsers.users.map(({ id, photo, name, position, email, phone }) => (
+                    <div className="team-item">
+                        <div className="team-item-container" key={id}>
+                            <img src={photo} alt="" className="team-item-img" />
+                            <span className="team-item-heading">
+                                {name}
+                            </span>
+                            <div>
+                                <span>
+                                    {position}
+                                </span>
+                                <span>
+                                    {email}
+                                </span>
+                                <span>
+                                    {phone}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                {memoizedUsers.total_pages > page+1 ?
+                    <button onClick={() => setPage(page+1)}>
+                        Upgrade
+                    </button>
+                :
+                    <button>
+                        Exceeded
+                    </button>
+                }
+            </>
         :
             <div>
-                2
+                No users found
             </div>
         }
     </section>
