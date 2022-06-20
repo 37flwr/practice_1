@@ -4,6 +4,7 @@ import { getUsers } from '../../../../store/users/actions';
 import Button from '../../../../components/Button'
 
 import './styles.scss';
+import TeamCard from './components/TeamCard';
 
 const Team = () => {
     const dispatch = useDispatch()
@@ -25,44 +26,29 @@ const Team = () => {
                 <div className="text-body nunito">Loading...</div>
             :
                 memoizedUsers.users.length > 0 ?
-                    <>
-                        <div className="team-container">
-                            <div className="team-items-grid">
-                                {memoizedUsers.users.map(({ id, photo, name, position, email, phone }) => (
-                                    <div className="team-item">
-                                        <div className="team-item-container" key={id}>
-                                            <img src={photo} alt="" className="team-item-img" />
-                                            <div className="team-item-heading nunito">
-                                                <span>
-                                                    {name}
-                                                </span>
-                                            </div>
-                                            <div className="team-item-details">
-                                                <span className="team-item-text nunito">
-                                                    {position}
-                                                </span>
-                                                <span className="team-item-text nunito">
-                                                    {email}
-                                                </span>
-                                                <span className="team-item-text nunito">
-                                                    {phone}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            {memoizedUsers.total_pages > page+1 ?
-                                <Button onClick={() => setPage(page+1)} width='great'>
-                                    Show more
-                                </Button>
-                            :
-                                <Button disabled width='great'>
-                                    Show more
-                                </Button>
-                            }
+                    <div className="team-container">
+                        <div className="team-items-grid">
+                            {memoizedUsers.users.map(({ id, photo, name, position, email, phone }) => (
+                                <TeamCard 
+                                    id={id} 
+                                    photo={photo} 
+                                    name={name} 
+                                    position={position} 
+                                    email={email} 
+                                    phone={phone}
+                                />
+                            ))}
                         </div>
-                    </>
+                        {memoizedUsers.total_pages > page+1 ?
+                            <Button onClick={() => setPage(page+1)} width='great'>
+                                Show more
+                            </Button>
+                        :
+                            <Button disabled width='great'>
+                                Show more
+                            </Button>
+                        }
+                    </div>
                 :
                     <div className="text-body nunito">
                         No users found
