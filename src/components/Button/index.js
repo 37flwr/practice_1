@@ -1,27 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import './styles.scss';
+import './styles.scss'
 
-const Button = ({ text, path, disabled, loading, width, customClass }) => {
-    console.log(customClass, disabled);
-    return (
-        <>
-            {loading ? 
-                <div className='nunito'>
-                    loading
-                </div>
+const Button = ({ children, disabled, loading, width, customClass, onClick }) => {
+  return (
+    <>
+        {loading ? 
+            <div className='nunito'>
+                loading
+            </div>
+        :
+        disabled ?
+            <button disabled className={`button ${width}-width nunito ${customClass} disabled text-body`} >
+                {children}
+            </button>
             :
-            disabled ?
-                <button disabled className={`button ${width}-width nunito ${customClass} disabled text-body`} >
-                    {text}
-                </button>
-                :
-                <Link to={path} className={`button ${width}-width nunito ${customClass} text-body`} >
-                    {text}
-                </Link>
-            }
-        </>
-    )
+            <button onClick={() => onClick()} className={`button ${width}-width nunito ${customClass} text-body`} >
+                {children}
+            </button>
+        }
+    </>
+  )
 }
 
 export default Button

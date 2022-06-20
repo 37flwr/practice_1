@@ -1,20 +1,22 @@
 import React from 'react'
 import IconLogo from '../../../assets/Logo.svg';
-import Button from '../../Button';
+import ButtonAsLink from '../../ButtonAsLink';
 import './styles.scss';
 
-const Header = () => {
-  return (
-    <section className='header'>
-        <div className='header-container'>
-            <img src={IconLogo} alt="Testtask logo" className='header-logo' />
-            <div className='header-buttons'>
-                <Button path="/" text="Users" width="standard" />
-                <Button path="/" text="Sign up" width="standard" />
-            </div>
-        </div>
-    </section>
-  )
-}
+const Header = () => (
+  <section className='header'>
+      <div className='header-container'>
+          <img src={IconLogo} alt="Testtask logo" className='header-logo' />
+          <div className='header-buttons'>
+              <ButtonAsLink path="/" width='standard'>
+                Users
+              </ButtonAsLink>
+              <ButtonAsLink path="/" width='standard'>
+                Sign up
+              </ButtonAsLink>
+          </div>
+      </div>
+  </section>
+)
 
 export default Header

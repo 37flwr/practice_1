@@ -1,14 +1,22 @@
 .team-part {
   width: 100%;
+  min-height: 500px;
+  margin-top: 140px;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+
   .team-container {
     width: 100%;
     max-width: 1170px;
+    padding: 0 60px;
+    margin-top: 50px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px;
 
     .team-items-grid {
       display: grid;
@@ -16,35 +24,45 @@
       grid-gap: 29px;
 
       .team-item {
+        padding: 20px;
+
         background-color: var(--background-secondary);
         border-radius: 10px;
-        padding: 20px;
         overflow-x: auto;
 
         .team-item-container {
+          width: 100%;
+
           display: flex;
           flex-direction: column;
           gap: 20px;
+
           overflow-x: auto;
-          width: 100%;
 
           .team-item-img {
             width: 70px;
             height: 70px;
+            margin: auto;
+
             border-radius: 50px;
           }
 
           .team-item-heading {
             display: flex;
             flex-direction: column;
+
             height: 26px;
+
             white-space: nowrap;
+            text-align: center;
           }
 
           .team-item-details {
             display: flex;
             flex-direction: column;
             gap: 5px;
+
+            text-align: center;
           }
         }
       }
@@ -55,7 +73,7 @@
 @media screen and (max-width: 1024px) {
   .team-part {
     .team-container {
-      padding: 32px;
+      padding: 0 32px;
 
       .team-items-grid {
         grid-template-columns: 1fr 1fr;
@@ -68,7 +86,7 @@
 @media screen and (max-width: 420px) {
   .team-part {
     .team-container {
-      padding: 16px;
+      padding: 0 16px;
 
       .team-items-grid {
         grid-template-columns: 1fr;
