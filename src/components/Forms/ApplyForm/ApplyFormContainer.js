@@ -18,7 +18,7 @@ const ApplyFormContainer = ({
         enableReinitialize
         initialValues={initialValues}
         validationSchema={getValidationSchema()}
-        onSubmit={() => console.log(1)}
+        onSubmit={(form) => console.log(form)}
     >
         {({values}) => <ApplyForm values={values} />}
     </Formik>

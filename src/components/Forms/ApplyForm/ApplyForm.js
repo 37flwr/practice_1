@@ -2,6 +2,7 @@ import React from 'react'
 import { Form } from 'formik';
 import { FormField } from '../../Formik/Fields'
 import { RadioFormField } from '../../Formik/Fields'
+import Button from '../../../components/Button'
 
 const formFields = () => [
     {
@@ -32,29 +33,33 @@ const radioFormFields = () => [
     {
         id: 'frontend',
         name: 'position',
+        value: 'frontend',
         type: 'radio',
-        placeholder: 'Frontend developer',
+        label: 'Frontend developer',
         show: true
     },
     {
         id: 'backend',
         name: 'position',
+        value: 'backend',
         type: 'radio',
-        placeholder: 'Backend developer',
+        label: 'Backend developer',
         show: true
     },
     {
         id: 'designer',
         name: 'position',
+        value: 'designer',
         type: 'radio',
-        placeholder: 'Designer',
+        label: 'Designer',
         show: true
     },
     {
         id: 'qa',
         name: 'position',
+        value: 'qa',
         type: 'radio',
-        placeholder: 'QA',
+        label: 'QA',
         show: true
     },
 ]
@@ -81,13 +86,17 @@ const renderUploadFormField = ({ show, ...fieldProps }) => (
     <div key={fieldProps.id}>1</div>
 )
 
-const ApplyForm = ({initialValues}) => {
+const ApplyForm = ({values}) => {
   return (
     <Form>
-        {formFields({initialValues}).map(renderFormField)}
+        {formFields({values}).map(renderFormField)}
         <span>Select your position</span>
-        {radioFormFields({initialValues}).map(renderRadioFormField)}
-        {uploadFormFields({initialValues}).map(renderUploadFormField)}
+        {radioFormFields({values}).map(renderRadioFormField)}
+        {uploadFormFields({values}).map(renderUploadFormField)}
+
+        <Button width='standard'>
+            Sign up
+        </Button>
     </Form>
   )
 }

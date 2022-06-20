@@ -15,8 +15,6 @@ const getValidationSchema = () => {
         phone: Yup.string()
             .required('Phone number is required')
             .matches(phoneRegExp, 'Not a valid phone number'),
-        photo: Yup.string()
-            .required('Image is required')
     })
 }
 

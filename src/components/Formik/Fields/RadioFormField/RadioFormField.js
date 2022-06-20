@@ -3,7 +3,7 @@ import { ErrorMessage, Field } from 'formik';
 import FormikError from '../../FormikError/FormikError';
 import './styles.scss';
 
-const FormField = ({
+const RadioFormField = ({
   component,
   name,
   label,
@@ -27,4 +27,4 @@ const FormField = ({
   </div>
   );
 
-export default FormField;
+export default RadioFormField;
