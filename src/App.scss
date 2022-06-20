@@ -16,7 +16,7 @@
   font-family: "Nunito", sans-serif;
 }
 
-.text-heding {
+.text-heading {
   font-size: 40px;
   line-height: 40px;
 }
@@ -24,4 +24,8 @@
 .text-body {
   font-size: 16px;
   line-height: 26px;
+}
+
+body {
+  background-color: var(--background-primary);
 }

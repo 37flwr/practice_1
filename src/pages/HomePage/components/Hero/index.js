@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../../components/Button'
+import ButtonAsLink from '../../../../components/ButtonAsLink'
 import HeroImage from '../../../../assets/HeroImage.png'
 import './styles.scss'
 
@@ -17,7 +17,9 @@ const Hero = () => (
             with accessibility in mind. They should also be excited to learn, 
             as the world of Front-End Development keeps evolving.
           </h3>
-          <Button text="Sign up" path="/" width="standard" customClass="hero-btn" />
+          <ButtonAsLink path="/" width="standard" customClass="hero-btn">
+            Sign up
+          </ButtonAsLink>
         </div>
         <img src={HeroImage} alt="" className='hero-image'/>
       </div>
