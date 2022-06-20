@@ -1,3 +1,4 @@
+import Apply from './components/Apply';
 import Hero from './components/Hero';
 import Team from './components/Team';
 
@@ -8,6 +9,7 @@ const HomePage = () => {
     <>
       <Hero />
       <Team />
+      <Apply />
     </>
   )
 }
