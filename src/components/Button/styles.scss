@@ -16,7 +16,14 @@
   text-decoration: none;
   color: var(--color-primary);
 
-  &:hover {
+  &:not(.disabled):hover {
     background-color: var(--color-yellow-additional);
   }
+}
+
+.disabled {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-disabled);
 }

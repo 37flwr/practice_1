@@ -10,7 +10,7 @@ const Header = () => {
             <img src={IconLogo} alt="Testtask logo" className='header-logo' />
             <div className='header-buttons'>
                 <Button path="/" text="Users" width="standard" />
-                <Button path="/" text="Sign up" disabled width="standard" />
+                <Button path="/" text="Sign up" width="standard" />
             </div>
         </div>
     </section>
