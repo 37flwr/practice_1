@@ -1,3 +1,4 @@
 import FormField from './FormField/FormField'
 import RadioFormField from './RadioFormField/RadioFormField'
-export { FormField, RadioFormField }
+import FileFormField from './FileFormField/FileFormField'
+export { FormField, RadioFormField, FileFormField }

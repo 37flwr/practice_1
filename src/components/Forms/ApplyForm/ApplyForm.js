@@ -1,8 +1,9 @@
 import React from 'react'
 import { Form } from 'formik';
-import { FormField } from '../../Formik/Fields'
+import { FileFormField, FormField } from '../../Formik/Fields'
 import { RadioFormField } from '../../Formik/Fields'
 import Button from '../../../components/Button'
+import './styles.scss'
 
 const formFields = () => [
     {
@@ -64,11 +65,11 @@ const radioFormFields = () => [
     },
 ]
 
-const uploadFormFields = () => [
+const fileFormFields = () => [
     {
         id: 'photo',
         name: 'photo',
-        type: 'text',
+        type: 'file',
         placeholder: 'Upload your photo',
         show: true
     },
@@ -82,17 +83,17 @@ const renderRadioFormField = ({ show, ...fieldProps }) => (
     <RadioFormField key={fieldProps.id} {...fieldProps} />
 )
 
-const renderUploadFormField = ({ show, ...fieldProps }) => (
-    <div key={fieldProps.id}>1</div>
+const renderFileFormField = ({ show, ...fieldProps }) => (
+    <FileFormField key={fieldProps.id} {...fieldProps} />
 )
 
 const ApplyForm = ({values}) => {
   return (
     <Form>
         {formFields({values}).map(renderFormField)}
-        <span>Select your position</span>
+        <div className='nunito text-body b-87 group-heading'>Select your position</div>
         {radioFormFields({values}).map(renderRadioFormField)}
-        {uploadFormFields({values}).map(renderUploadFormField)}
+        {fileFormFields({values}).map(renderFileFormField)}
 
         <Button width='standard'>
             Sign up

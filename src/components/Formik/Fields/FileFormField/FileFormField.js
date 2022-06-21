@@ -3,7 +3,7 @@ import { ErrorMessage, Field } from 'formik';
 import FormikError from '../../FormikError/FormikError';
 import './styles.scss';
 
-const RadioFormField = ({
+const FileFormField = ({
   component,
   name,
   label,
@@ -14,18 +14,18 @@ const RadioFormField = ({
   errorCustomClassName,
   ...restProps
 }) => (
-  <div className='radio-input-container' >
+  <div className='file-input-container' >
     <Field
         name={name}
         id={id}
         {...(component && { component })}
         {...(type && { type })}
         {...restProps}
-        className='radio-field text-body nunito'
+        className='file-field text-body nunito'
     />
-    <label htmlFor={id} className='checkmark'/>
-    <label className="b-87 text-body nunito" htmlFor={id}>{label}</label>
+    <label className="text-body nunito" htmlFor={id}>{label}</label>
+    <ErrorMessage component={FormikError} name={name} className={errorCustomClassName} />
   </div>
   );
 
-export default RadioFormField;
+export default FileFormField;

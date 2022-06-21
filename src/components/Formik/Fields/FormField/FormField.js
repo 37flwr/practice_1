@@ -7,6 +7,7 @@ const FormField = ({
   component,
   name,
   label,
+  legend,
   type,
   id,
   customClassName,
@@ -14,8 +15,8 @@ const FormField = ({
   errorCustomClassName,
   ...restProps
 }) => (
-  <div className='input-container is-column align-center' >
-    <label className="content-start nunito" htmlFor={id}>{label}</label>
+  <div className='input-container' >
+    <label className="nunito" htmlFor={id}>{label}</label>
     <Field
         name={name}
         id={id}
@@ -24,6 +25,7 @@ const FormField = ({
         {...restProps}
         className='field nunito'
     />
+    <span className='legend nunito'>{legend}</span>
     <ErrorMessage component={FormikError} name={name} className={errorCustomClassName} />
   </div>
   );
