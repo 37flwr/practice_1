@@ -11,15 +11,19 @@ const ApplyFormContainer = ({
         position: 'frontend',
         photo: '',
     },
+    setFormStatus
 }) => {
   return (
     <Formik
         enableReinitialize
         initialValues={initialValues}
         validationSchema={getValidationSchema()}
-        onSubmit={(form) => console.log(form)}
+        onSubmit={(form) => {
+          console.log(form)
+          setFormStatus(true)}
+        }
     >
-        {({values}) => <ApplyForm values={values} />}
+        {({values}) => <ApplyForm values={values}/>}
     </Formik>
   )
 }

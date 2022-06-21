@@ -20,7 +20,7 @@
     position: relative;
 
     border-radius: 50%;
-    border: 1px solid var(--color-selected);
+    border: 1px solid var(--color-transparent);
 
     cursor: pointer;
 
@@ -28,20 +28,25 @@
       height: 10px;
       width: 10px;
 
-      position: absolute;
       content: "";
 
-      display: none;
+      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
 
       background-color: var(--color-selected);
       border-radius: 50%;
+
+      display: none;
     }
   }
 
-  .radio-field:checked ~ .checkmark::after {
-    display: unset;
+  .radio-field:checked ~ .checkmark {
+    border: 1px solid var(--color-selected);
+
+    &::after {
+      display: unset;
+    }
   }
 }
