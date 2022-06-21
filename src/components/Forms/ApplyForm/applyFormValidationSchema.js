@@ -3,7 +3,6 @@ import * as Yup from 'yup'
 const getValidationSchema = () => {
     const phoneRegExp = /^\+?3?8?(0\d{9})$/
 
-
     return Yup.object().shape({
         name: Yup.string()
             .required('Name is required')

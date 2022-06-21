@@ -12,7 +12,6 @@ const ApplyFormContainer = ({
         photo: '',
     },
 }) => {
-
   return (
     <Formik
         enableReinitialize

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form } from 'formik';
 import { FileFormField, FormField } from '../../Formik/Fields'
 import { RadioFormField } from '../../Formik/Fields'
@@ -88,16 +87,35 @@ const renderFileFormField = ({ show, ...fieldProps }) => (
 )
 
 const ApplyForm = ({values}) => {
+    const checkIfValid = (values) => {
+        if (values.name.length > 2 && 
+            values.email.length > 2 && 
+            values.email.includes('@') && 
+            values.email.includes('.') && 
+            values.phone.length === 13 && 
+            values.photo !== '' ) {
+            return true
+        }
+        return false
+    }
   return (
     <Form>
         {formFields({values}).map(renderFormField)}
+
         <div className='nunito text-body b-87 group-heading'>Select your position</div>
         {radioFormFields({values}).map(renderRadioFormField)}
+
         {fileFormFields({values}).map(renderFileFormField)}
 
-        <Button width='standard' customClass="apply-form-button">
-            Sign up
-        </Button>
+        {checkIfValid(values) ?
+            <Button width='standard' customClass="apply-form-button">
+                Sign up
+            </Button>
+        :
+            <Button width='standard' disabled customClass="apply-form-button">
+                Sign up
+            </Button>
+        }
     </Form>
   )
 }
