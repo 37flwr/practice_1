@@ -11,6 +11,7 @@
   --color-yellow-additional: #ffe302;
   --color-disabled: #b4b4b4;
   --color-warning: #cb3d40;
+  --color-black: #000000;
 }
 
 .nunito {
@@ -18,8 +19,8 @@
 }
 
 .b-87 {
-  color: #000;
-  opacity: 0.87;
+  color: #000 !important;
+  opacity: 0.87 !important;
 }
 
 .text-heading {

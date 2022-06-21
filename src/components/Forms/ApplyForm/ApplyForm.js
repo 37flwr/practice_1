@@ -95,7 +95,7 @@ const ApplyForm = ({values}) => {
         {radioFormFields({values}).map(renderRadioFormField)}
         {fileFormFields({values}).map(renderFileFormField)}
 
-        <Button width='standard'>
+        <Button width='standard' customClass="apply-form-button">
             Sign up
         </Button>
     </Form>
