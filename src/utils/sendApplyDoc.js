@@ -5,7 +5,7 @@ export const sendApplyDoc = async (payload) => {
     const token = await axios.get('https://frontend-test-assignment-api.abz.agency/api/v1/token')
 
     let formData = new FormData(); 
-    formData.append('position_id', payload.position); 
+    formData.append('position_id', payload.position.slice(6)); 
     formData.append('name', payload.name); 
     formData.append('email', payload.email); 
     formData.append('phone', payload.phone); 

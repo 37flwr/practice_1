@@ -11,7 +11,7 @@ const getValidationSchema = () => {
         email: Yup.string()
             .required('Email is required')
             .email('Must be a valid email'),
-        position: Yup.number()
+        position: Yup.string()
             .required(),
         phone: Yup.string()
             .required('Phone number is required')

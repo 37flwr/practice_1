@@ -13,11 +13,11 @@ const RadioFormField = ({
         name='position'
         id={id}
         {...(component && { component })}
-        value={id}
+        value={`field-${id}`}
         type='radio'
         className='radio-field text-body nunito'
     />
-    <label htmlFor={id} className='checkmark'/>
+    <label htmlFor={id} id={`fake-${id}`} className='checkmark'/>
     <label className="b-87 text-body nunito radio-label" htmlFor={id}>{name}</label>
   </div>
   );
