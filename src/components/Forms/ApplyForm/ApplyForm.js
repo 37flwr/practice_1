@@ -93,6 +93,7 @@ const ApplyForm = ({values, positions}) => {
             values.email.includes('@') && 
             values.email.includes('.') && 
             values.phone.length === 13 && 
+            values.position !== '' &&
             values.photo !== '' ) {
             return true
         }

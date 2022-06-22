@@ -9,7 +9,7 @@ const ApplyFormContainer = ({
         name: '',
         email: '',
         phone: '+380',
-        position: 'frontend',
+        position: '',
         photo: '',
     },
     setFormStatus,
