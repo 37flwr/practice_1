@@ -12,7 +12,7 @@ const ApplyFormContainer = ({
         position: '',
         photo: '',
     },
-    setFormStatus,
+    setLocalFormStatus,
     positions,
 }) => {
   const dispatch = useDispatch()
@@ -24,7 +24,7 @@ const ApplyFormContainer = ({
         validationSchema={getValidationSchema()}
         onSubmit={(form) => {
           dispatch(sendApply(form))
-          setFormStatus(true)
+          setLocalFormStatus(true)
           }
         }
     >

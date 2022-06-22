@@ -7,7 +7,7 @@ import {
 const initialState = {
     loading: false,
     error: false,
-    formSent: false,
+    formStatus: false,
     response: '',
 }
 
@@ -22,14 +22,14 @@ const redactors = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                formSent: true,
+                formStatus: true,
                 response: action.payload,
             }
         case SEND_APPLY_FAILURE:
             return {
                 ...state,
                 loading: false,
-                formSent: false,
+                formStatus: false,
                 response: action.payload,
             }
         default:
