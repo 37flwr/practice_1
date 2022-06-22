@@ -1,0 +1,2 @@
+export const SEND_APPLY = "SEND_APPLY";
+export const SEND_APPLY_SUCCESS = "SEND_APPLY_SUCCESS";

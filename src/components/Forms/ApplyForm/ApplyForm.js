@@ -86,7 +86,7 @@ const renderFileFormField = ({ show, ...fieldProps }) => (
     <FileFormField key={fieldProps.id} {...fieldProps} />
 )
 
-const ApplyForm = ({values}) => {
+const ApplyForm = ({values, positions}) => {
     const checkIfValid = (values) => {
         if (values.name.length > 2 && 
             values.email.length > 2 && 
@@ -98,12 +98,13 @@ const ApplyForm = ({values}) => {
         }
         return false
     }
+    console.log(positions);
   return (
     <Form className="apply-form" >
         {formFields({values}).map(renderFormField)}
 
         <div className='nunito text-body b-87 group-heading'>Select your position</div>
-        {radioFormFields({values}).map(renderRadioFormField)}
+        {positions.map(renderRadioFormField)}
 
         {fileFormFields({values}).map(renderFileFormField)}
 

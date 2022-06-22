@@ -6,25 +6,19 @@ import './styles.scss';
 const RadioFormField = ({
   component,
   name,
-  label,
-  type,
   id,
-  customClassName,
-  divCustomClassName,
-  errorCustomClassName,
-  ...restProps
 }) => (
   <div className='radio-input-container' >
     <Field
-        name={name}
+        name='position'
         id={id}
         {...(component && { component })}
-        {...(type && { type })}
-        {...restProps}
+        value={name}
+        type='radio'
         className='radio-field text-body nunito'
     />
     <label htmlFor={id} className='checkmark'/>
-    <label className="b-87 text-body nunito" htmlFor={id}>{label}</label>
+    <label className="b-87 text-body nunito radio-label" htmlFor={id}>{name}</label>
   </div>
   );
 

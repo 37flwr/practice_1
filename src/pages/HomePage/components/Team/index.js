@@ -25,7 +25,7 @@ const Team = () => {
             {loading ? 
                 <div className="text-body nunito">Loading...</div>
             :
-                memoizedUsers.users.length > 0 ?
+                memoizedUsers?.users?.length > 0 ?
                     <div className="team-container">
                         <div className="team-items-grid">
                             {memoizedUsers.users.map(({ id, photo, name, position, email, phone }) => (
