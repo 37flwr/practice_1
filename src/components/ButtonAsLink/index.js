@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './styles.scss';
 
 const ButtonAsLink = ({ children, path, disabled, loading, width, customClass }) => {
-    console.log(customClass, disabled);
     return (
         <>
             {loading ? 

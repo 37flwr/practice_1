@@ -14,9 +14,14 @@ const Button = ({ children, disabled, loading, width, customClass, onClick }) =>
                 {children}
             </button>
             :
-            <button onClick={() => onClick()} className={`button ${width}-width nunito ${customClass} text-body`} >
-                {children}
-            </button>
+            onClick ?
+                <button onClick={() => onClick()} className={`button ${width}-width nunito ${customClass} text-body`} type='submit'>
+                    {children}
+                </button>
+                :
+                <button className={`button ${width}-width nunito ${customClass} text-body`} type='submit' >
+                    {children}
+                </button>
         }
     </>
   )

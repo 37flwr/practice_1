@@ -1,0 +1,19 @@
+.apply-form {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .group-heading {
+    margin-bottom: 11px;
+    margin-top: -15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .apply-form {
+    width: 328px;
+  }
+}

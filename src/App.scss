@@ -10,10 +10,17 @@
   --color-yellow-primary: #f4e041;
   --color-yellow-additional: #ffe302;
   --color-disabled: #b4b4b4;
+  --color-warning: #cb3d40;
+  --color-black: #000000;
 }
 
 .nunito {
   font-family: "Nunito", sans-serif;
+}
+
+.b-87 {
+  color: #000 !important;
+  opacity: 0.87 !important;
 }
 
 .text-heading {
@@ -24,6 +31,14 @@
 .text-body {
   font-size: 16px;
   line-height: 26px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.part-heading {
+  width: 75%;
 }
 
 body {

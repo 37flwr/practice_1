@@ -17,11 +17,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     .team-items-grid {
+      width: 100%;
+
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 29px;
+
+      margin-bottom: 50px;
 
       .team-item {
         padding: 20px;
