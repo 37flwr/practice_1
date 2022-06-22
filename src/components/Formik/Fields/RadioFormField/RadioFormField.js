@@ -13,7 +13,7 @@ const RadioFormField = ({
         name='position'
         id={id}
         {...(component && { component })}
-        value={name}
+        value={id}
         type='radio'
         className='radio-field text-body nunito'
     />

@@ -24,7 +24,8 @@ const ApplyFormContainer = ({
         validationSchema={getValidationSchema()}
         onSubmit={(form) => {
           dispatch(sendApply(form))
-          setFormStatus(true)}
+          setFormStatus(true)
+          }
         }
     >
         {({values}) => <ApplyForm values={values} positions={positions}/>}

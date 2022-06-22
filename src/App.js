@@ -6,7 +6,6 @@ import Layout from './components/Layout';
 import store from './store';
 
 function App() {
-  console.log(publicRoutes);
   return (
     <Provider store={store}>
       <Router>
@@ -14,7 +13,6 @@ function App() {
             <Routes>
             {publicRoutes.map(
               ({ path, component: Component, exact }, idx) => {
-                console.log(path);
                 return <Route
                 key={idx}
                 path={path}

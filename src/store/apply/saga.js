@@ -1,16 +1,16 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { sendApplySuccess } from './actions';
+import { sendApplyFailure, sendApplySuccess } from './actions';
 import { SEND_APPLY } from './actionTypes';
 import { sendApplyDoc } from '../../utils';
 
 function* sendApplySaga({ payload }) {
     try {
-        yield sendApplyDoc(payload)
-        yield put(sendApplySuccess());
+        const apply = yield sendApplyDoc(payload)
+        yield put(sendApplySuccess(apply));
 
     } catch (error) {
-        console.log(error);
+        yield put(sendApplyFailure(error))
     }
 }
 

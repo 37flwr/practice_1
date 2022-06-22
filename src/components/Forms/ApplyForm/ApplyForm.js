@@ -99,9 +99,8 @@ const ApplyForm = ({values, positions}) => {
         }
         return false
     }
-    console.log(positions);
   return (
-    <Form className="apply-form" >
+    <Form className="apply-form" id='apply-form'>
         {formFields({values}).map(renderFormField)}
 
         <div className='nunito text-body b-87 group-heading'>Select your position</div>
