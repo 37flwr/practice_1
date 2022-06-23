@@ -2,24 +2,23 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsers } from '../../../../store/users/actions';
 import Button from '../../../../components/Button'
-
+import TeamCard from './components/TeamCard/TeamCard';
 import './styles.scss';
-import TeamCard from './components/TeamCard';
 
 const Team = () => {
-    const dispatch = useDispatch()
-    const [page, setPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
 
+    const dispatch = useDispatch()
     const { loading, users } = useSelector((state) => state.Users);
     const memoizedUsers = useMemo(() => users, [users])
-
+    
     useEffect(() => {
-        dispatch(getUsers({page}))
-    }, [dispatch, page])
+        dispatch(getUsers({currentPage}))
+    }, [dispatch, currentPage])
 
     return (
         <section className="team-part">
-            <span className="text-heading nunito">
+            <span className="section-heading text-heading nunito b-87 text-center">
                 Working with GET request
             </span>
             {loading ? 
@@ -27,7 +26,7 @@ const Team = () => {
             :
                 memoizedUsers?.users?.length > 0 ?
                     <div className="team-container">
-                        <div className="team-items-grid">
+                        <div className="team-cards-grid">
                             {memoizedUsers.users.map(({ id, photo, name, position, email, phone }) => (
                                 <TeamCard 
                                     id={id} 
@@ -36,11 +35,12 @@ const Team = () => {
                                     position={position} 
                                     email={email} 
                                     phone={phone}
+                                    key={id}
                                 />
                             ))}
                         </div>
-                        {memoizedUsers.total_pages > page+1 ?
-                            <Button onClick={() => setPage(page+1)} width='great'>
+                        {memoizedUsers.total_pages > currentPage ?
+                            <Button onClick={() => setCurrentPage(currentPage+1)} width='great'>
                                 Show more
                             </Button>
                         :
