@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsers } from '../../../../store/users/actions';
-import Button from '../../../../components/Button'
-import TeamCard from './components/TeamCard/TeamCard';
+import Button from '../../../../components/Buttons/Button'
+import TeamCard from './components/TeamCard';
+import Loader from '../../../../components/Loader';
 import './styles.scss';
 
 const Team = () => {
@@ -22,7 +23,7 @@ const Team = () => {
                 Working with GET request
             </span>
             {loading ? 
-                <div className="text-body nunito">Loading...</div>
+                <Loader />
             :
                 memoizedUsers?.users?.length > 0 ?
                     <div className="team-container">
@@ -40,7 +41,7 @@ const Team = () => {
                             ))}
                         </div>
                         {memoizedUsers.total_pages > currentPage ?
-                            <Button onClick={() => setCurrentPage(currentPage+1)} width='great'>
+                            <Button onClick={() => setCurrentPage(currentPage+1)} width='great' loading={loading}>
                                 Show more
                             </Button>
                         :
