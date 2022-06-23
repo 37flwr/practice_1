@@ -1,0 +1,15 @@
+.text-body-span {
+  cursor: pointer;
+  margin: auto;
+}
+
+.team-card-heading {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  height: 26px;
+
+  white-space: nowrap;
+  text-align: center;
+}

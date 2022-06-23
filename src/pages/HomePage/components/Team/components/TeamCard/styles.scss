@@ -1,0 +1,41 @@
+.team-card {
+  padding: 20px;
+
+  position: relative;
+
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+  overflow-x: auto;
+  .team-card-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .team-card-img {
+      width: 70px;
+      height: 70px;
+      margin: auto;
+
+      border-radius: 50px;
+    }
+
+    .team-card-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      text-align: center;
+      overflow-x: auto;
+
+      .team-card-contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        text-align: center;
+      }
+    }
+  }
+}
