@@ -40,7 +40,7 @@ const Team = () => {
                             ))}
                         </div>
                         {memoizedUsers.total_pages > page+1 ?
-                            <Button onClick={() => setPage(page+1)} width='great'>
+                            <Button onClick={() => setPage(page+1)} width='great' loading={loading}>
                                 Show more
                             </Button>
                         :
