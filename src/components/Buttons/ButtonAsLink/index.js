@@ -1,14 +1,12 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import Loader from '../../../components/Loader'
 import './styles.scss';
 
 const ButtonAsLink = ({ children, path, disabled, loading, width, customClass }) => {
     return (
         <>
             {loading ? 
-                <div className='nunito'>
-                    loading
-                </div>
+                <Loader />
             :
             disabled ?
                 <button disabled className={`button ${width}-width nunito ${customClass} disabled text-body`} >

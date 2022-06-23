@@ -1,7 +1,8 @@
 import { Form } from 'formik';
+import { useSelector } from 'react-redux';
 import { FileFormField, FormField } from '../../Formik/Fields'
 import { RadioFormField } from '../../Formik/Fields'
-import Button from '../../../components/Button'
+import Button from '../../../components/Buttons/Button'
 import './styles.scss'
 
 const formFields = () => [
@@ -29,41 +30,6 @@ const formFields = () => [
     },
 ].filter(({show}) => show)
 
-const radioFormFields = () => [
-    {
-        id: 'frontend',
-        name: 'position',
-        value: 'frontend',
-        type: 'radio',
-        label: 'Frontend developer',
-        show: true
-    },
-    {
-        id: 'backend',
-        name: 'position',
-        value: 'backend',
-        type: 'radio',
-        label: 'Backend developer',
-        show: true
-    },
-    {
-        id: 'designer',
-        name: 'position',
-        value: 'designer',
-        type: 'radio',
-        label: 'Designer',
-        show: true
-    },
-    {
-        id: 'qa',
-        name: 'position',
-        value: 'qa',
-        type: 'radio',
-        label: 'QA',
-        show: true
-    },
-]
-
 const fileFormFields = () => [
     {
         id: 'photo',
@@ -87,6 +53,8 @@ const renderFileFormField = ({ show, ...fieldProps }) => (
 )
 
 const ApplyForm = ({values, positions}) => {
+    const { loading } = useSelector((state) => state.Apply)
+
     const checkIfValid = (values) => {
         if (values.name.length > 2 && 
             values.email.length > 2 && 
@@ -109,7 +77,7 @@ const ApplyForm = ({values, positions}) => {
         {fileFormFields({values}).map(renderFileFormField)}
 
         {checkIfValid(values) ?
-            <Button width='standard' customClass="apply-form-button">
+            <Button width='standard' customClass="apply-form-button" loading={loading}>
                 Sign up
             </Button>
         :
