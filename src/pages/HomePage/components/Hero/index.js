@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonAsLink from '../../../../components/ButtonAsLink'
+import ButtonAsLink from '../../../../components/Buttons/ButtonAsLink'
 import HeroImage from '../../../../assets/HeroImage.png'
 import './styles.scss'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import IconLogo from '../../../assets/Logo.svg';
-import ButtonAsLink from '../../ButtonAsLink';
+import ButtonAsLink from '../../Buttons/ButtonAsLink';
 import './styles.scss';
 
 const Header = () => (

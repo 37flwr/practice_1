@@ -1,7 +1,7 @@
 import { Form } from 'formik';
 import { FileFormField, FormField } from '../../Formik/Fields'
 import { RadioFormField } from '../../Formik/Fields'
-import Button from '../../../components/Button'
+import Button from '../../../components/Buttons/Button'
 import './styles.scss'
 
 const formFields = () => [

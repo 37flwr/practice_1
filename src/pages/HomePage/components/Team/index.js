@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUsers } from '../../../../store/users/actions';
-import Button from '../../../../components/Button'
+import Button from '../../../../components/Buttons/Button'
 
 import './styles.scss';
 import TeamCard from './components/TeamCard';
