@@ -12,9 +12,9 @@ https://www.figma.com/file/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?node-id=3373%3
 
 # Tools used
 
-HTML
-SCSS
-JS
-React
-Redux
+HTML,
+SCSS,
+JS,
+React,
+Redux,
 Formik
