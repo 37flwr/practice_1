@@ -1,7 +1,5 @@
 # Project was made as a test task at abz.agency
 
-All the design and api belong to abz.agency
-
 # Technical requirement
 
 https://drive.google.com/file/d/11XPGP9wrHB-B5aLlBCRLXHVA2yvM2QhY/view
